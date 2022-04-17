@@ -3,7 +3,11 @@ import { Chart } from './Chart';
 
 const WIDTH_PER_ROUND = 25;
 
-export const ScrollableChart = ({ data }: { data: { playerName: string; scores: (number | null)[] }[] }) => {
+export const ScrollableChart = ({
+  data,
+}: {
+  data: { playerName: string; scores: (number | null)[] }[];
+}) => {
   return (
     <Box
       sx={{

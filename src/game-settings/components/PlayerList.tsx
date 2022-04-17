@@ -28,7 +28,9 @@ export const PlayerList = ({
 }) => {
   const t = useT();
   return (
-    <Paper sx={{ flexGrow: 1, display: 'flex', gap: 1, flexDirection: 'column', padding: 2, ...sx }}>
+    <Paper
+      sx={{ flexGrow: 1, display: 'flex', gap: 1, flexDirection: 'column', padding: 2, ...sx }}
+    >
       <Box sx={{ marginBottom: 1 }}>
         <Button
           variant="outlined"

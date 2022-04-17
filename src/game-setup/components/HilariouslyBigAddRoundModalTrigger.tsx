@@ -1,7 +1,11 @@
 import { Fab, Icon, SpeedDialIcon, useMediaQuery, useTheme } from '@mui/material';
 import { useT } from '../../locales/hooks/useT';
 
-export const HilariouslyBigAddRoundModalTrigger = ({ onOpenModal }: { onOpenModal?: () => void }) => {
+export const HilariouslyBigAddRoundModalTrigger = ({
+  onOpenModal,
+}: {
+  onOpenModal?: () => void;
+}) => {
   const theme = useTheme();
   const t = useT();
   const scale = useMediaQuery(theme.breakpoints.down('md')).valueOf() ? 1.8 : 3;
