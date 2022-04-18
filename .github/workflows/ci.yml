@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  ci:
+  type_check:
     name: Type check
     runs-on: ubuntu-latest
     steps:
@@ -47,6 +47,24 @@ jobs:
           node-version: '16'
       - run: npm ci
       - run: npm test
+  e2e:
+    name: E2E test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          record: true
+          config: video=true
+          build: npm run build
+          start: npm run serve
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   build:
     name: Build
     runs-on: ubuntu-latest

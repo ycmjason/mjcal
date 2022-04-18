@@ -11,7 +11,8 @@
     "coverage": "vitest run --coverage",
     "lint": "eslint src",
     "prettier": "prettier src",
-    "e2e:dev": "concurrently --names \"build,serve,cypress\" \"npm run build -- --watch --emptyOutDir\" \"serve -l 3001 dist\" \"cypress open\""
+    "serve": "serve -l 3001 dist",
+    "e2e:dev": "concurrently --names build,serve,cypress 'npm:build -- --watch' npm:serve 'cypress open'"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
