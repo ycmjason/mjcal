@@ -6,6 +6,10 @@ import { injectGa } from './vite-plugins/injectGa';
 const GA_ID = 'G-8BRGZ1YGE1';
 
 export default defineConfig({
+  root: 'src',
+  build: {
+    outDir: '../dist',
+  },
   plugins: [
     react(), //
     injectGa(GA_ID),
