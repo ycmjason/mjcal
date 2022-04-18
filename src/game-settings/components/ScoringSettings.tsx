@@ -34,8 +34,12 @@ export const ScoringSettings = ({
           }
           fullWidth
         >
-          <ToggleButton value="half">{t.chungJais.half}</ToggleButton>
-          <ToggleButton value="full">{t.chungJais.full}</ToggleButton>
+          <ToggleButton value="half" data-name="ScoringSettingChungJaiHalf">
+            {t.chungJais.half}
+          </ToggleButton>
+          <ToggleButton value="full" data-name="ScoringSettingChungJaiFull">
+            {t.chungJais.full}
+          </ToggleButton>
         </ToggleButtonGroup>
       </FormControl>
 
@@ -51,12 +55,24 @@ export const ScoringSettings = ({
         >
           {(
             [
-              [t.chipValues.c25chicken, 0.25],
-              [t.chipValues.c51, 0.5],
-              [t.chipValues.c12mosquitoes, 1],
+              {
+                value: 0.25,
+                chipValueName: t.chipValues.c25chicken,
+                dataName: 'ScoringSettingsChipValue25Chicken',
+              },
+              {
+                value: 0.5,
+                chipValueName: t.chipValues.c51,
+                dataName: 'ScoringSettingsChipValue51',
+              },
+              {
+                value: 1,
+                chipValueName: t.chipValues.c12mosquitoes,
+                dataName: 'ScoringSettingsChipValue12Mosquitoes',
+              },
             ] as const
-          ).map(([chipValueName, value], i) => (
-            <ToggleButton value={value} key={i}>
+          ).map(({ value, chipValueName, dataName }, i) => (
+            <ToggleButton value={value} key={i} data-name={dataName}>
               {chipValueName}
             </ToggleButton>
           ))}

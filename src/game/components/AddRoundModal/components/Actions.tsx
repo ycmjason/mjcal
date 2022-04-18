@@ -28,7 +28,7 @@ export const Actions = ({
         {t.back}
       </Button>
 
-      <Button onClick={onNext} disabled={!canNext}>
+      <Button onClick={onNext} disabled={!canNext} data-name="AddRoundModalNext">
         {nextText}
       </Button>
     </DialogActions>

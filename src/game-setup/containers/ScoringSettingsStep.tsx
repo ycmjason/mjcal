@@ -12,7 +12,7 @@ export const ScoringSettingsStep = ({ onNext }: { onNext: () => void }) => {
       </Typography>
       <ScoringSettingsContainer />
       <Stack sx={{ alignSelf: 'flex-end', flexDirection: 'row', gap: 2 }}>
-        <Button variant="contained" size="large" onClick={onNext}>
+        <Button variant="contained" size="large" onClick={onNext} data-name="GameSetupNext">
           {t.next}
         </Button>
       </Stack>

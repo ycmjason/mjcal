@@ -14,7 +14,7 @@ export const PlayersStep = ({ onBack, onNext }: { onBack: () => void; onNext: ()
         <Button variant="text" size="large" onClick={onBack}>
           {t.back}
         </Button>
-        <Button variant="contained" size="large" onClick={onNext}>
+        <Button variant="contained" size="large" onClick={onNext} data-name="GameSetupNext">
           {t.next}
         </Button>
       </Stack>

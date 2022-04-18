@@ -14,7 +14,7 @@ const BottomMenu = <T extends string>({
   selectedItemId,
   onSelectedItemIdChange,
 }: {
-  items: readonly { id: T; label: string; icon: ReactNode }[];
+  items: readonly { id: T; label: string; icon: ReactNode; dataName?: string }[];
   selectedItemId?: T;
   onSelectedItemIdChange: (id: T) => void;
 }) => {
@@ -29,20 +29,26 @@ const BottomMenu = <T extends string>({
       }}
       sx={{ width: '100%' }}
     >
-      {items.map(({ label, icon }, i) => (
-        <BottomNavigationAction label={label} icon={icon} key={i} />
+      {items.map(({ label, icon, dataName }, i) => (
+        <BottomNavigationAction label={label} icon={icon} key={i} data-name={dataName} />
       ))}
     </BottomNavigation>
   );
 };
 
 const useBottomMenuRouterViewSwitch = <T extends string>(
-  views: readonly { path: T; label: string; icon: ReactNode; component: () => JSX.Element }[],
+  views: readonly {
+    path: T;
+    label: string;
+    icon: ReactNode;
+    component: () => JSX.Element;
+    dataName?: string;
+  }[],
 ) => {
   const { currentLocation, navigate } = useRouterContext();
 
   const items = useMemo(
-    () => views.map(({ path, label, icon }) => ({ id: path, label, icon })),
+    () => views.map(({ path, label, icon, dataName }) => ({ id: path, label, icon, dataName })),
     [views],
   );
 
@@ -84,6 +90,7 @@ export const GamePage = () => {
             label: t.bottomMenu.table,
             icon: <Icon>list_alt</Icon>,
             component: TablePage,
+            dataName: 'GamePageBottomNavTableButton',
           },
           {
             path: '/settings',

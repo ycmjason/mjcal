@@ -1,0 +1,13 @@
+{
+  "baseUrl": "http://localhost:3001",
+  "projectId": "soa145",
+  "integrationFolder": "./src",
+  "testFiles": "**/__e2e__/*.spec.ts",
+
+  "downloadsFolder": "./src/__e2e__/downloads",
+  "fixturesFolder": "./src/__e2e__/fixtures",
+  "screenshotsFolder": "./src/__e2e__/screenshots",
+  "videosFolder": "./src/__e2e__/videos",
+  "pluginsFile": false,
+  "supportFile": false
+}

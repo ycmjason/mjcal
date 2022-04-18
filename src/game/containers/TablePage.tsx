@@ -82,7 +82,7 @@ export const TablePage = () => {
                 ) : (
                   <>
                     {rounds.map(({ id }, i) => (
-                      <TableRow key={`round${i}`}>
+                      <TableRow key={`round${i}`} data-name="ScoreTableRoundScoresRow">
                         <TableCell size="small">
                           <IconButton
                             onClick={() => {
@@ -96,7 +96,11 @@ export const TablePage = () => {
                         </TableCell>
                         <TableCell padding="none">#{i + 1}</TableCell>
                         {roundIdToScoresMap.get(id)!.map((score, i) => (
-                          <TableCell key={i} sx={{ color: getScoreColor(score) }}>
+                          <TableCell
+                            key={i}
+                            sx={{ color: getScoreColor(score) }}
+                            data-name="ScoreTableRoundScoreCell"
+                          >
                             {score ?? '-'}
                           </TableCell>
                         ))}

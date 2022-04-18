@@ -3,6 +3,7 @@ import { useT } from '../../locales/hooks/useT';
 
 export const HilariouslyBigAddRoundModalTrigger = ({
   onOpenModal,
+  ...attrs
 }: {
   onOpenModal?: () => void;
 }) => {
@@ -22,6 +23,7 @@ export const HilariouslyBigAddRoundModalTrigger = ({
       }}
       onClick={onOpenModal}
       size="large"
+      {...attrs}
     >
       <SpeedDialIcon icon={<Icon>ramen_dining</Icon>} />
     </Fab>

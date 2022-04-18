@@ -27,7 +27,7 @@ export const WinnerSelect = ({
         fullWidth
       >
         {players.map(({ id, name }) => (
-          <ToggleButton value={id} key={id}>
+          <ToggleButton value={id} key={id} data-name="WinnerOptionButton">
             {name}
           </ToggleButton>
         ))}

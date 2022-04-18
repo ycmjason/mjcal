@@ -27,7 +27,7 @@ export const LoserButtonGroup = ({
         disabled={disabled}
       >
         {players.map(({ id, name }) => (
-          <ToggleButton value={id} key={id}>
+          <ToggleButton value={id} key={id} data-name="LoserOptionButton">
             {name}
           </ToggleButton>
         ))}

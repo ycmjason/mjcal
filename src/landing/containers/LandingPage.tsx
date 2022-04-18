@@ -65,6 +65,7 @@ export const LandingPage = () => {
             size="large"
             sx={{ mt: 5 }}
             onClick={() => navigate({ path: '/open-table' })}
+            data-name="LandingPageOpenTableButton"
           >
             {t.openTable}
             <Icon sx={{ ml: 1 }}>table_bar</Icon>

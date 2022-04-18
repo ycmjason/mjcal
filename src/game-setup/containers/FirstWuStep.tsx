@@ -50,7 +50,10 @@ export const FirstWuStep = ({ onNext, onBack }: { onNext: () => void; onBack: ()
             width: '100%',
           }}
         >
-          <HilariouslyBigAddRoundModalTrigger onOpenModal={openAddRoundModal} />
+          <HilariouslyBigAddRoundModalTrigger
+            onOpenModal={openAddRoundModal}
+            data-name="AddRoundButton"
+          />
         </Box>
       </Stack>
       <AddRoundModal isOpened={isAddRoundModalOpened} onClose={closeAddRoundModal} />

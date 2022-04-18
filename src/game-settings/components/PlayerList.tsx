@@ -81,6 +81,7 @@ export const PlayerList = ({
                       )
                     }
                     fullWidth
+                    data-name="PlayerListPlayerNameInput"
                   />
                 </TableCell>
               </TableRow>
