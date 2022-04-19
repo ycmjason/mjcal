@@ -18,6 +18,7 @@ export const PlayersStep = ({ onBack, onNext }: { onBack: () => void; onNext: ()
           {t.next}
         </Button>
       </Stack>
+      testing percy
     </Stack>
   );
 };

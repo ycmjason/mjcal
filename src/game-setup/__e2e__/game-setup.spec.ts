@@ -18,7 +18,7 @@ it('should go through all steps and eat first wu', () => {
   getRoundScoreCellForPlayer({ roundIndex: 0, playerIndex: 3 }).should('have.text', '0');
 });
 
-it('should match screenshots', { defaultCommandTimeout: 10000 }, async () => {
+it('should match screenshots', async () => {
   cy.visit('/open-table', { failOnStatusCode: false });
 
   cy.percySnapshot('Game setup - Scoring settings');
