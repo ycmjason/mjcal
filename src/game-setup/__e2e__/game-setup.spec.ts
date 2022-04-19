@@ -17,15 +17,3 @@ it('should go through all steps and eat first wu', () => {
   getRoundScoreCellForPlayer({ roundIndex: 0, playerIndex: 2 }).should('have.text', '-8');
   getRoundScoreCellForPlayer({ roundIndex: 0, playerIndex: 3 }).should('have.text', '0');
 });
-
-it('should match screenshots', async () => {
-  cy.visit('/open-table', { failOnStatusCode: false });
-
-  cy.percySnapshot('Game setup - Scoring settings');
-
-  cy.get('[data-name=GameSetupNext]').click();
-  cy.percySnapshot('Game setup - Players');
-
-  cy.get('[data-name=GameSetupNext]').click();
-  cy.percySnapshot('Game setup - First wu');
-});
