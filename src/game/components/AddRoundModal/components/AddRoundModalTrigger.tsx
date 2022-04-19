@@ -25,6 +25,7 @@ export const AddRoundModalTrigger = ({ onOpenModal }: { onOpenModal?: () => void
             sx: { gap: 1, '&::after': { content: `"${t.addRound}"` } },
           })}
       onClick={onOpenModal}
+      data-name="AddRoundModalTrigger"
     >
       <SpeedDialIcon icon={<Icon>ramen_dining</Icon>} />
     </Fab>
