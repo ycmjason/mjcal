@@ -2,7 +2,7 @@ import { screenshotTests } from '../../__e2e__/helpers/screenshotTests';
 import { addRound } from '../components/AddRoundModal/__e2e__/helpers/addRound';
 
 const add1Round = () => {
-  cy.get('[data-name=AddRoundModalTrigger]');
+  cy.get('[data-name=AddRoundModalTrigger]').click();
   addRound({ winnerIndex: 0, loserIndex: 1 });
 };
 
