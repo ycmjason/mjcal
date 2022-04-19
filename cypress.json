@@ -12,5 +12,5 @@
   "videosFolder": "./src/__e2e__/videos",
 
   "pluginsFile": false,
-  "supportFile": false
+  "supportFile": "cypress/support/index.js"
 }

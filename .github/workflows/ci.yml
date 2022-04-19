@@ -51,7 +51,8 @@ jobs:
     name: E2E test
     runs-on: ubuntu-latest
     steps:
-      - run: sudo apt-get install -y fonts-wqy-zenhei
+      - name: Install Chinesse Fonts
+        run: sudo apt-get install -y fonts-wqy-zenhei
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
@@ -59,14 +60,17 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
+          wait-on: 'http://localhost:3001/'
           browser: chrome
           record: true
           config: video=true
           build: npm run build
           start: npm run serve
+          command-prefix: 'percy exec -- npx'
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
   build:
     name: Build
     runs-on: ubuntu-latest
