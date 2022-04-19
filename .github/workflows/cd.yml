@@ -1,5 +1,9 @@
 name: CD
 
+concurrency:
+  group: cd
+  cancel-in-progress: true
+
 on:
   workflow_run:
     workflows: [CI]
